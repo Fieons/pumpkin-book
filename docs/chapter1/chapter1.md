@@ -2,6 +2,17 @@
 $$E_{o t e}\left(\mathfrak{L}_{a} | X, f\right)=\sum_{h} \sum_{\boldsymbol{x} \in \mathcal{X}-X} P(\boldsymbol{x}) \mathbb{I}(h(\boldsymbol{x}) \neq f(\boldsymbol{x})) P\left(h | X, \mathfrak{L}_{a}\right)$$
 [解析]：参见公式(1.2)
 
+[公式分解]:
+- $f$ ：希望学习的真实目标函数
+- $\sum_{h}$ ：表示假设空间中所有可能假设的总和
+- $\mathcal{X}$ :整个样本空间
+- $\sum_{\boldsymbol{x} \in \mathcal{X}-X}$ ：训练集 $X$ 外的样本$x$。
+- $P(\boldsymbol{x})$ 数据点的概率分布
+- $\mathbb{I}(h(\boldsymbol{x}) \neq f(\boldsymbol{x}))$ 是一个指示函数，如果假设$h$没有正确地进行分类，则其值为1,否则为0。
+- $P\left(h | X, \mathfrak{L}_{a}\right)$ 算法$\mathfrak{L}_{a}$基于训练数据$X$产生假设$h$的概率
+
+总之，这个公式用于评估我们的假设$h$对不属于训练集$X$的新数据点$x$的泛化能力,公式基于**概率二项分布**。
+
 ## 1.2
 $$\begin{aligned}
 \sum_{f}E_{ote}(\mathfrak{L}_a\vert X,f) &= \sum_f\sum_h\sum_{\boldsymbol{x}\in\mathcal{X}-X}P(\boldsymbol{x})\mathbb{I}(h(\boldsymbol{x})\neq f(\boldsymbol{x}))P(h\vert X,\mathfrak{L}_a) \\
